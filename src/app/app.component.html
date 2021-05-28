@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Login form</h2>
+<div class="shadow mt-5  mb-5 bg-success rounded text-center" *ngIf="isSuccessFull">Login successfully</div>
+<div class="shadow mt-5  mb-5 bg-danger rounded text-center" *ngIf="isError">Username Or Password are incorrect</div>
+  <form [formGroup]="loginform!" (ngSubmit)="onLoginForm()" class="mt-3">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="name" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" formControlName="password" placeholder="Enter password" name="pswd">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
