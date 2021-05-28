@@ -22,14 +22,11 @@ export class AppComponent implements OnInit {
 
   onLoginForm() {
     this.loginService.login(this.loginform.value).subscribe(loginResponse => {
+      this.isSuccessFull = true;
+      this.isError = false;
     }, error => {
-        if (error.message.indexOf('dashboard') !== -1) {
-          this.isSuccessFull = true;
-          this.isError = false;
-        } else if (error.message.indexOf('login') !== -1) {
-          this.isError = true;
-          this.isSuccessFull = false;
-        }
+        this.isError = true
+        this.isSuccessFull = false
     })
   }
   
